@@ -30,7 +30,7 @@ impl Rectangle {
 
 // Also valid, but does not make sense here
 impl Rectangle {
-    fn _can_hold_2(&self, other: &Rectangle) -> bool {
+    fn can_hold_2(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
 }
