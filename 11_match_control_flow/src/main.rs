@@ -86,6 +86,7 @@ fn main() {
         Coin::Quarter(state) => println!("State quarter from {:?}!", state),
         _ => count += 1,
     }
+    println!("Count is {}!", count);
 
     // Same as
     let coin: Coin = Coin::Quarter(UsState::Alabama);
@@ -95,6 +96,7 @@ fn main() {
     } else {
         count += 1;
     }
+    println!("Count is {}!", count);
 }
 
 // Matches are exhaustive, you need to define both None and Some for Option
