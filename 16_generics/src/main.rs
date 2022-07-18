@@ -83,6 +83,11 @@ impl<T, U> GenericPoint2<T, U> {
     }
 }
 
+enum Option<T> {
+    Some(T),
+    None,
+}
+
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
@@ -121,4 +126,8 @@ fn main() {
     let p2 = GenericPoint2 { x:"Hello", y:'c' };
     let p3 = p1.mix(p2);
     println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
+
+    // Rust coverts this to two different ones, so its good performance
+    let integer = Option::Some(5);
+    let float = Option::Some(5.0);
 }
