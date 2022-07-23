@@ -1,4 +1,4 @@
-# Microservice gRPC Example
+# gRPC Microservice
 Example of Microservice architecture using gRPC.
 
 ## How to run

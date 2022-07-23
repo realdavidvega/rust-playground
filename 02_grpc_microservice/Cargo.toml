@@ -1,5 +1,5 @@
 [package]
-name = "microservice_grpc_example"
+name = "grpc_microservice"
 version = "0.1.0"
 edition = "2021"
 
@@ -20,7 +20,7 @@ path = "src/client.rs"
 tonic = "0.7"
 # protocol buffer
 prost = "0.10"
-# async runtime
+# async runtime for concurrent programming (non-blocking)
 tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
 
 [build-dependencies]
