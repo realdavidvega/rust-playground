@@ -10,6 +10,7 @@ pub mod payments {
 // async main
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // loopback address in ipv6, equal to 127.0.0.1 in ipv4
     let addr = "http://[::1]:50051";
 
     // connect to addr

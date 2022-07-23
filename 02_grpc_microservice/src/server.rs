@@ -35,6 +35,7 @@ impl Bitcoin for BitcoinService {
 //async main
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // loopback address in ipv6, equal to 127.0.0.1 in ipv4
     let addr = "[::1]:50051".parse()?;
     let btc_service = BitcoinService::default();
 

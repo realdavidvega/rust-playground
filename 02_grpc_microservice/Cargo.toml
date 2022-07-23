@@ -1,6 +1,7 @@
 [package]
 name = "grpc_microservice"
 version = "0.1.0"
+authors = ["David Vega"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -21,6 +22,7 @@ tonic = "0.7"
 # protocol buffer
 prost = "0.10"
 # async runtime for concurrent programming (non-blocking)
+# adding conditional flags for triggering features
 tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
 
 [build-dependencies]
