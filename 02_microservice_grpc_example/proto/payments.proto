@@ -1,0 +1,17 @@
+syntax = "proto3";
+package payments;
+
+service Bitcoin {
+  rpc SendPayment (BtcPaymentsRequest) returns (BtcPaymentsResponse);
+}
+
+message BtcPaymentsRequest {
+  string from_addr = 1;
+  string to_addr = 2;
+  uint32 amount = 3;
+}
+
+message BtcPaymentsResponse {
+  bool successful = 1;
+  string message = 2;
+}

@@ -1,0 +1,28 @@
+[package]
+name = "microservice_grpc_example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# server binary
+[[bin]]
+name = "payments-server"
+path = "src/server.rs"
+
+# client binary
+[[bin]]
+name = "payments-client"
+path = "src/client.rs"
+
+[dependencies]
+# gRPC implementation
+tonic = "0.7"
+# protocol buffer
+prost = "0.10"
+# async runtime
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+
+[build-dependencies]
+# allow cargo to build protocol buffers during compilation
+tonic-build = "0.7"
