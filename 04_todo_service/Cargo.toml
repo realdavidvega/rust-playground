@@ -1,8 +1,16 @@
 [package]
 name = "todo_service"
 version = "0.1.0"
+authors = ["David Vega"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rocket = "0.5.0-rc.2"
+serde = "1.0"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
+
+[dependencies.serde_derive]
+version = "1.0"
