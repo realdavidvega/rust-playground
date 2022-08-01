@@ -1,11 +1,6 @@
-# TODO Service
+# TODOs API
 
-Example of TODO Service using:
-
-* [Rocket](https://rocket.rs/): web framework.
-* [Diesel](https://diesel.rs/): object-relational mapping and query builder.
-* [Serde](https://serde.rs/): serializing and deserializing framework.
-* [Postgres](https://www.postgresql.org/): relational database.
+Example of TODO API using many libraries such us Diesel, Serde, Tokio, Dropshot...
 
 ## Installation
 
@@ -19,4 +14,11 @@ Diesel CLI
 
 ```bash
 cargo install diesel_cli --no-default-features --features "postgres"
+```
+
+## Running
+Run cargo
+
+```bash
+cargo run
 ```
