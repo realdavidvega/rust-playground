@@ -31,14 +31,14 @@ async fn main() -> Result<(), String> {
     };
     let log = log_config
         .to_logger("todos_api")
-        .map_err(|error| format!("failed to create logger: {}", error))?;
+        .map_err(|error| format!("Failed to create logger: {}", error))?;
 
     let mut api = ApiDescription::new();
     todos::register(&mut api);
     health::register(&mut api);
 
     HttpServerStarter::new(&config, api, (), &log)
-        .map_err(|error| format!("failed to create server: {}", error))?
+        .map_err(|error| format!("Failed to create server: {}", error))?
         .start()
         .await
 }

@@ -25,10 +25,10 @@ pub struct TodoRequest {
 }
 
 impl Todo {
-    pub fn all() -> Result<Vec<Self>, HttpError> {
+    pub fn index() -> Result<Vec<Self>, HttpError> {
         let conn = db::connection()?;
         let b: Result<Vec<Self>, diesel::result::Error> =
-            diesel::sql_query("SELECT * FROM todos ORDER BY created_at").get_results(&conn);
+            diesel::sql_query("select * from todos order by created_at").get_results(&conn);
 
         Ok(b.unwrap())
     }
@@ -44,7 +44,7 @@ impl Todo {
             Ok(v) => Ok(v.id),
             Err(_e) => Err(HttpError::for_bad_request(
                 None,
-                String::from("something went wrong"),
+                String::from("Something went wrong"),
             )),
         }
     }
@@ -60,7 +60,7 @@ impl Todo {
             Ok(v) => Ok(v),
             Err(_e) => Err(HttpError::for_bad_request(
                 None,
-                String::from("something went wrong"),
+                String::from("Something went wrong"),
             )),
         }
     }
@@ -72,7 +72,7 @@ impl Todo {
             Ok(v) => Ok(v),
             Err(_e) => Err(HttpError::for_bad_request(
                 None,
-                String::from("something went wrong"),
+                String::from("Something went wrong"),
             )),
         }
     }

@@ -18,7 +18,7 @@ struct PathParams {
     path = "/todos",
 }]
 async fn index(_ctx: Arc<RequestContext<()>>) -> Result<HttpResponseOk<Vec<Todo>>, HttpError> {
-    let todos = Todo::all()?;
+    let todos = Todo::index()?;
     Ok(HttpResponseOk(todos))
 }
 

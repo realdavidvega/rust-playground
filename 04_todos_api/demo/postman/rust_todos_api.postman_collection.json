@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "a6b1a456-b9fe-491f-a491-fc1ec64a1b58",
-		"name": "01-Rust_Todos_API",
+		"name": "rust_todos_api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21062005"
 	},
