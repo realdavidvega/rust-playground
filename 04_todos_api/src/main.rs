@@ -29,6 +29,7 @@ async fn main() -> Result<(), String> {
     let log_config = ConfigLogging::StderrTerminal {
         level: ConfigLoggingLevel::Info,
     };
+    
     let log = log_config
         .to_logger("todos_api")
         .map_err(|error| format!("Failed to create logger: {}", error))?;

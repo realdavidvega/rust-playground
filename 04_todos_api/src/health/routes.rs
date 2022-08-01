@@ -1,4 +1,4 @@
-use dropshot::{endpoint, ApiDescription, HttpError, HttpResponseOk, RequestContext};
+use dropshot::{ApiDescription, HttpError, HttpResponseOk, RequestContext, endpoint};
 use std::sync::Arc;
 
 #[endpoint {

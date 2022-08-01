@@ -1,7 +1,7 @@
 use crate::todos::{Todo, TodoRequest};
 use dropshot::{
-    endpoint, ApiDescription, HttpError, HttpResponseCreated, HttpResponseDeleted, HttpResponseOk,
-    HttpResponseUpdatedNoContent, Path, RequestContext, TypedBody,
+    ApiDescription, HttpError, HttpResponseCreated, HttpResponseDeleted, HttpResponseOk,
+    HttpResponseUpdatedNoContent, Path, RequestContext, TypedBody, endpoint
 };
 use schemars::JsonSchema;
 use serde::Deserialize;
@@ -89,8 +89,8 @@ pub fn register(api: &mut ApiDescription<()>) {
     api.register(delete).unwrap();
 }
 
-fn validate_request(br: &TodoRequest) -> Result<(), HttpError> {
-    if br.title.trim().is_empty() {
+fn validate_request(req: &TodoRequest) -> Result<(), HttpError> {
+    if req.title.trim().is_empty() {
         return Err(HttpError::for_bad_request(None, String::from("Empty Title")));
     }
     Ok(())

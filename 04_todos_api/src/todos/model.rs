@@ -83,7 +83,7 @@ impl From<TodoRequest> for Todo {
         Todo {
             id: Uuid::new_v4(),
             title: todo.title.trim().to_string(),
-            checked: todo.checked,
+            checked: todo.checked || false,
             created_at: Utc::now().naive_utc()
         }
     }
