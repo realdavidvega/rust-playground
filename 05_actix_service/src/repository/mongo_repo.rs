@@ -3,7 +3,7 @@ extern crate dotenv;
 use std::env;
 use dotenv::dotenv;
 use mongodb::{
-    bson::extjson::de::Error,
+    bson::{extjson::de::Error, oid::ObjectId, doc},
     results::InsertOneResult,
     Client, Collection,
 };
@@ -39,5 +39,17 @@ impl MongoRepo {
             .ok()
             .expect("Error creating routine");
         Ok(routine)
+    }
+
+    pub async fn get_routine(&self, id: &String) -> Result<Routine, Error> {
+        let obj_id = ObjectId::parse_str(id).unwrap();
+        let filter = doc! {"_id": obj_id};
+        let routine = self
+            .col
+            .find_one(filter, None)
+            .await
+            .ok()
+            .expect("Error getting routine");
+        Ok(routine.unwrap())
     }
 }

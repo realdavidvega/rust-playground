@@ -1,5 +1,5 @@
 use actix_web::{App, HttpServer, web::Data};
-use api::routine_api::{create_routine};
+use api::routine_api::{create_routine, get_routine};
 use repository::mongo_repo::MongoRepo;
 
 mod api; 
@@ -14,6 +14,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(db_data.clone())
             .service(create_routine)
+            .service(get_routine)
     })
     .bind(("127.0.0.1", 8080))?
     .run()

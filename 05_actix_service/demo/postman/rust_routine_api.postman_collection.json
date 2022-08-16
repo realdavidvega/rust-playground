@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "15a4292f-afce-4b9a-815e-04f951205f62",
+		"name": "rust_routine_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21062005"
+	},
+	"item": [
+		{
+			"name": "Create Routine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lanes\": [\n        {\n            \"fromHour\": \"16\",\n            \"toHour\": \"17\",\n            \"color\": \"red\",\n            \"locked\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/routines",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"routines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Routine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/routines/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"routines",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "62fc0051c864d3797cd88ce1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
